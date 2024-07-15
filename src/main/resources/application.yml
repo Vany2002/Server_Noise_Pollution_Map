@@ -1,0 +1,17 @@
+spring:
+  h2:
+    console:
+      enabled: true # Включаем консоль H2 для удобства отладки
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE # URL для подключения к базе данных H2
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect # Диалект для H2
+    hibernate:
+      ddl-auto: create-drop # Автоматическое создание и удаление схемы при запуске и завершении тестов
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
